@@ -32,8 +32,7 @@ print('var training finish')
 
 ### Inference
 #### VAR Inference
-<img width="845" alt="image" src="https://github.com/taki0112/pseudo_var/assets/26713992/3db17532-6d29-47ad-b246-d7f57f1cbdd9">
-
+<img width="873" alt="image" src="https://github.com/taki0112/pseudo_var/assets/26713992/4f07af30-c234-4d4b-87e5-68eb43569a16">
 
 ```
 generated_image = var_inference(class_label, patch_nums)
