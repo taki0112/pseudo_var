@@ -10,12 +10,19 @@ Pseudo code for [VAR: Visual Autoregressive Modeling: Scalable Image Generation 
 
 ### Training Process
 #### 1. VQVAE Training
+<img width="612" alt="image" src="https://github.com/taki0112/pseudo_var/assets/26713992/83b60be1-a60a-4020-b453-aa90d7d1c0f2">
+
+<img width="1291" alt="image" src="https://github.com/taki0112/pseudo_var/assets/26713992/19235126-053a-460f-b2ea-ed57e360ae7d">
+
+
 ```
 vqvae_loss = vqvae_training(img, patch_nums)
 print('vqvae training finish')
 ```
 
 #### 2. VAR Training
+<img width="872" alt="image" src="https://github.com/taki0112/pseudo_var/assets/26713992/d92f3289-7fcb-4ed7-bfa5-e426ed621e2c">
+
 ```
 var_loss = var_training(img, patch_nums, class_label)
 print('var training finish')
@@ -25,6 +32,9 @@ print('var training finish')
 
 ### Inference
 #### VAR Inference
+<img width="845" alt="image" src="https://github.com/taki0112/pseudo_var/assets/26713992/3db17532-6d29-47ad-b246-d7f57f1cbdd9">
+
+
 ```
 generated_image = var_inference(class_label, patch_nums)
 print('Generate image: ', generated_image.shape)
