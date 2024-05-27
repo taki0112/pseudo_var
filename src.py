@@ -9,6 +9,7 @@ def vqvae_training(img, patch_nums):
     # hyper-parameter
     codebook_num = 4096
     codebook_dim = 32
+    beta = 0.25
     codebook = nn.Embedding(codebook_num, codebook_dim)
 
     # encode
@@ -21,7 +22,7 @@ def vqvae_training(img, patch_nums):
     # loss
     perceptual_loss = 0
     discriminative_loss = 0
-    loss = mse_loss(latent, f_hat) + mse_loss(img, recon_img) + perceptual_loss + discriminative_loss
+    loss = beta * mse_loss(latent, f_hat.detach()) + mse_loss(latent.detach(), f_hat) + mse_loss(img, recon_img) + perceptual_loss + discriminative_loss
 
     return loss
 
@@ -49,7 +50,6 @@ def var_training(img, patch_nums, class_label):
     # embedding
     level_emb = level_codebook(level_seq) + pos_emb # [bs, L, 1024]
     class_emb = class_codebook(class_label) + pos_start_emb # [bs, 1, 1024]
-    print(class_emb.shape, level_emb.shape)
 
     """ Input """
     token_maps = get_token_maps(R, codebook, patch_nums) # [bs, L-1, codebook_dim]
