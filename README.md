@@ -3,7 +3,7 @@ Pseudo code for [VAR: Visual Autoregressive Modeling: Scalable Image Generation 
 
 ---
 ### Details
-#### Token block
+#### Token block (not implemented here)
 <img width="159" alt="image" src="https://github.com/taki0112/pseudo_var/assets/26713992/f40a6835-07e3-4c6d-843d-c10eaa1a45dc">
 
 ---
